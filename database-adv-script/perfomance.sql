@@ -64,6 +64,8 @@ LEFT JOIN
     payments pay ON b.id = pay.booking_id
 WHERE
     b.booking_date >= '2024-01-01' -- index-friendly filter
+    AND
+    b.booking_date <= '2024-12-31' -- index-friendly filter
 ORDER BY
     b.booking_date DESC; -- Make sure there's an index on booking_date
 
@@ -85,5 +87,7 @@ LEFT JOIN
     payments pay ON b.id = pay.booking_id
 WHERE
     b.booking_date >= '2024-01-01' -- index-friendly filter
+    AND
+    b.booking_date <= '2024-12-31' -- index-friendly filter
 ORDER BY
     b.booking_date DESC; -- Make sure there's an index on booking_date
